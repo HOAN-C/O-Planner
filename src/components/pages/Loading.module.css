@@ -3,11 +3,16 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 80vh;
+}
+
+.plsWaitText {
+  font-size: 1.5rem;
 }
 
 .loadingText {
-  font-size: 1.5rem;
-  color: #2c0808;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #414141;
   margin-top: 10px;
 }

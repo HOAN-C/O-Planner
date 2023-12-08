@@ -22,10 +22,11 @@ export default function Main() {
 
   return (
     <div>
+        <Loading />
       <ul>
-        {section.map((item, index) => (
+        {/* {section.map((item, index) => (
           <li key={index}>{item}</li>
-        ))}
+        ))} */}
       </ul>
     </div>
   );

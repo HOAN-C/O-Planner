@@ -20,23 +20,13 @@ export default function Navigation(props) {
     hour12: false,
   });
 
-  function languageHandler() {
-    props.setLanguage(props.language === "KOR" ? "ENG" : "KOR");
-  }
-
   return (
     <div className={styles.container}>
-      <div className={styles.rightSide}>
+      <div className={styles.leftSide}>
         <h1 className={styles.title}>O'Planner</h1>
       </div>
-      <div className={styles.leftSide}>
-        {/* <div className={styles.roundedBox}> */}
+      <div className={styles.rightSide}>
         <div className={styles.time}>{formattedTime}</div>
-        {/* </div> */}
-
-        <div className={styles.languageLimit} onClick={languageHandler}>
-          <div className={styles.language}>{props.language}</div>
-        </div>
       </div>
     </div>
   );

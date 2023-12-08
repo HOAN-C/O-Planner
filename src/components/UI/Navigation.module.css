@@ -7,18 +7,12 @@
   border: none;
 }
 
-.leftSide {
-  display: flex;
-  align-items: center;
+.rightSide {
+  width: 80px;
 }
 
 .title {
   margin: 0;
-}
-
-.rightSide {
-  display: flex;
-  align-items: center;
 }
 
 .roundedBox {
@@ -30,6 +24,7 @@
 
 .time {
   margin-right: 10px;
+  text-align: left;
 }
 
 .languageLimit {

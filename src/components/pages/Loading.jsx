@@ -39,6 +39,7 @@ export default function Loading() {
 
   return (
     <div className={styles.loadingContainer}>
+      <p className={styles.plsWaitText}> 로딩중입니다. 잠시만 기다려주세요.</p>
       <p className={styles.loadingText}>{statement}</p>
     </div>
   );
