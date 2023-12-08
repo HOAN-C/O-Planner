@@ -1,0 +1,15 @@
+.tableContainer {
+  text-align: center;
+  width: 80%;
+  border-collapse: collapse;
+}
+
+.tableHeader {
+  background-color: #f2f2f2;
+}
+
+.tableCell {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
