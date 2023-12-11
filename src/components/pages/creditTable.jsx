@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./Table.module.css";
+import styles from "./CreditTable.module.css";
 
 const section = [
   "기초교양(교양 필수)",
@@ -21,7 +21,7 @@ const creditData = [
   [1, 0, 0, 0, 2, 0, 0, 0, 3, 9, 22],
 ];
 
-export default function Table() {
+export default function CreditTable() {
   return (
     <table className={styles.tableContainer}>
       <thead>

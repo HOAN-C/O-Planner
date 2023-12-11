@@ -1,0 +1,22 @@
+.tableContainer {
+  width: 100%;
+  margin: auto;
+  border-collapse: collapse;
+  text-align: center;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  overflow: hidden;
+}
+
+.tableHeader {
+  padding: 10px;
+  background-color: #272727;
+  color: white;
+}
+
+.tableCell {
+  border: 1px solid #dddddd;
+  padding: 8px;
+  width: 7%;
+  text-align: center;
+}
