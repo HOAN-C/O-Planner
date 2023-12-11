@@ -24,6 +24,7 @@ const creditData = [
 export default function CreditTable() {
   return (
     <table className={styles.tableContainer}>
+      {/* 구분 출력 */}
       <thead>
         <tr>
           {section.map((item, index) => (
@@ -33,6 +34,7 @@ export default function CreditTable() {
           ))}
         </tr>
       </thead>
+      {/* 정보 출력 */}
       <tbody>
         {creditData.map((row, rowIndex) => (
           <tr key={rowIndex}>

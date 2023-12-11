@@ -26,6 +26,7 @@ export default function Loading() {
     wiseSaying[Math.floor(Math.random() * wiseSaying.length)]
   );
 
+  //3.2초 마다 새로운 문장 출력
   useEffect(() => {
     const intervalId = setInterval(() => {
       setStatement(wiseSaying[Math.floor(Math.random() * wiseSaying.length)]);

@@ -8,18 +8,20 @@ export default function Login() {
   const [userPWInput, setUserPWInput] = useState("");
   const navigate = useNavigate();
 
+  //ID 변수 입력 헨들러
   const idInputHandler = (e) => {
     setUserIdInput(e.target.value);
     console.log(e.target.value);
   };
 
+  //PW 변수 입력 헨들러
   const pwInputHandler = (e) => {
     setUserPWInput(e.target.value);
     console.log(e.target.value);
   };
 
   const clickHandler = () => {
-    //로그인 알고리즘
+    //로그인 알고리즘 추가해야 함.
     navigate("/main");
   };
 

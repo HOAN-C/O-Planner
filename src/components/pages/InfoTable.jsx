@@ -86,6 +86,7 @@ const lectureData = [
 export default function InfoTable() {
   return (
     <table className={styles.tableContainer}>
+      {/* 구분 출력 */}
       <thead>
         <tr className={styles.tableHeader}>
           <th className={styles.tableCell}>학술번호</th>
@@ -96,6 +97,7 @@ export default function InfoTable() {
           <th className={styles.tableCell}>강의실</th>
         </tr>
       </thead>
+      {/* 정보 출력 */}
       <tbody>
         {lectureData.map((item, index) => (
           <tr key={index}>

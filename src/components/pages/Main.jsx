@@ -15,8 +15,9 @@ export default function Main() {
       ) : (
         //로딩 완료 시 아래 컴포넌트 출력
         <div className={styles.container}>
-          <CreditTable />
-          <InfoTable />
+          <CreditTable /> {/* 이수 구분 컴포넌트 */}
+          <InfoTable /> {/* 강의 정보, 시간표 출력 컴포넌트(예정) */}
+          <button className={styles.button}>시간표 생성</button>
         </div>
       )}
     </div>
