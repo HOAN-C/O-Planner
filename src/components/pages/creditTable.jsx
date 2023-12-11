@@ -1,7 +1,5 @@
-// Table.js
-
 import React from "react";
-import styles from "./Table.module.css"; // Import the CSS module
+import styles from "./Table.module.css";
 
 const section = [
   "기초교양(교양 필수)",
@@ -17,7 +15,7 @@ const section = [
   "졸업학점",
 ];
 
-const data = [
+const creditData = [
   [14, 4, 0, 2, 2, 2, 0, 9, 30, 36, 120],
   [15, 4, 0, 2, 2, 2, 0, 9, 30, 27, 91],
   [1, 0, 0, 0, 2, 0, 0, 0, 3, 9, 22],
@@ -36,7 +34,7 @@ export default function Table() {
         </tr>
       </thead>
       <tbody>
-        {data.map((row, rowIndex) => (
+        {creditData.map((row, rowIndex) => (
           <tr key={rowIndex}>
             {row.map((cell, cellIndex) => (
               <td key={cellIndex} className={styles.tableCell}>

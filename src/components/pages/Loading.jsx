@@ -32,7 +32,7 @@ export default function Loading() {
   useEffect(() => {
     const intervalId = setInterval(() => {
       setStatement(wiseSaying[Math.floor(Math.random() * wiseSaying.length)]);
-    }, 7000);
+    }, 3200);
 
     return () => clearInterval(intervalId);
   }, []);
