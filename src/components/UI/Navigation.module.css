@@ -12,6 +12,7 @@
 }
 
 .title {
+  padding-left: 1rem;
   margin: 0;
 }
 
@@ -23,7 +24,7 @@
 }
 
 .time {
-  margin-right: 10px;
+  margin-right: 1rem;
   text-align: left;
 }
 
