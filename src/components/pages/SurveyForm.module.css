@@ -1,0 +1,113 @@
+/* SurveyForm.module.css */
+
+/* 설문조사 틀 */
+.titlecontainer {
+  border: 2px solid #ccc;
+  padding: 20px;
+}
+
+  /* 설문조사 타이틀 */
+  .title {
+    text-align: center;
+    font-weight: bold;
+    padding: 10px;
+    font-size: 1.7rem;
+    margin-bottom: 100px;
+  }
+
+/* 질문 틀 */
+.questionContainer {
+  width: 80%;
+  margin: 0 auto;
+  border: 2px solid #ccc; /* 테두리*/
+  padding: 20px; /*내부 여백*/
+}
+
+/* 질문 1 */
+.question1 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 20px;
+}
+
+  /* 슬라이더 */
+  .sliderContainer {
+    width: 50%; /* 슬라이드 바의 너비를 80%로 설정 */
+    margin: 20px auto; /* 위아래 여백을 20px로 설정, 좌우 여백을 auto로 설정하여 가운데 정렬 */
+  }
+
+/* 질문 2 */
+.question2 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 20px;
+}
+
+  /* 요일 */
+  .day-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  /* 요일 라디오 버튼 */
+  .day-option {
+    width: 48%; /* 두 요일씩 나란히 표시되도록 설정 */
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center; /* 요일과 체크박스를 세로 정렬 */
+  }
+
+/* 질문 3 */
+.question3 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 20px;
+}
+
+  /* 시간대 체크박스 */
+  .checkboxOption {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  .time-option input[type="checkbox"] {
+    transform: scale(30); /* 크기 조절 */
+    margin-right: 5px; /* 체크박스 간 간격 조절 */
+  }
+  
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.selected {
+  background-color: rgb(255, 255, 255);
+}
+
+.button {
+  margin-top: 3rem;
+  /* width: fit-content; */
+  background-color: #000000;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.button:hover {
+  background-color: #4e4e4e;
+} 
