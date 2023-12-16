@@ -3,7 +3,16 @@
     margin: 2% 5% 5% 5%;
 }
 
-.button {
+.button1 {
+    margin-top: 3rem;
+    /* 버튼 간격 추가 */
+    margin-right: 10px; 
+    width: max-content;
+    text-align: center;
+    padding: 10px;
+}
+
+.button2 {
     margin-top: 3rem;
     width: max-content;
     text-align: center;
