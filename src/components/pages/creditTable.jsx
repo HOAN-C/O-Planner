@@ -32,9 +32,9 @@ export default function CreditTable(props) {
     <table className={styles.tableContainer}>
       {/*구분 출력*/}
       <thead>
-        <tr>
+        <tr className={styles.tableHeader}>
           {section.map((item, index) => (
-            <th key={index} className={styles.tableHeader}>
+            <th className={styles.tableCell} key={index}>
               {item}
             </th>
           ))}
