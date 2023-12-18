@@ -30,12 +30,10 @@ export default function Navigation(props) {
         <h1 className={styles.title}>O'Planner</h1>
       </div>
       <div className={styles.rightSide}>
-        <div className={styles.buttonAndTime}>
-          <button onClick={languageHandler} className={styles.roundedBox}>
-            {props.language ? "KOR" : "ENG"}
-          </button>
-          <div className={styles.time}>{formattedTime}</div>
-        </div>
+        <button onClick={languageHandler} className={styles.language}>
+          {props.language ? "KOR" : "ENG"}
+        </button>
+        <div className={styles.time}>{formattedTime}</div>
       </div>
     </div>
   );

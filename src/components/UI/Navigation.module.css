@@ -5,10 +5,16 @@
   padding: 10px;
   background-color: transparent;
   border: none;
-  max-width: 100%;
+  width: 100%;
 }
 
 .rightSide {
+  width: 300px;
+  border: solid 1px black;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
   width: 120px;
 }
 
@@ -17,45 +23,16 @@
   margin: 0;
 }
 
-.roundedBox {
-  border-radius: 10px;
-  padding: 8px;
-  margin-right: 10px;
-  cursor: pointer;
-}
-
-.time {
-  margin-right: 1rem;
-  text-align: left;
-}
-
-.languageLimit {
-  display: flex;
-  align-items: center;
-}
-
 .language {
-  margin-right: 5px;
-}
-
-.limit {
-  font-weight: bold;
-}
-
-.buttonAndTime {
-  display: flex;
-  align-items: center;
-  max-width: 100%;
-}
-
-.buttonAndTime button {
   background-color: transparent;
   color: black;
   border: none;
-  padding: 10px;
   cursor: pointer;
-  border-radius: 5px;
   margin-right: 5px;
-  margin-top: 5px;
-  font-size: 15px;
+}
+
+.time {
+  width: 580px;
+  margin-right: 1rem;
+  text-align: left;
 }
