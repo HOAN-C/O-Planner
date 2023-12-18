@@ -21,7 +21,7 @@ export default function Navigation(props) {
   });
 
   const languageHandler = () => {
-    props.setLanguage(!props.language)
+    props.setLanguage(!props.language);
   };
 
   return (
@@ -30,8 +30,12 @@ export default function Navigation(props) {
         <h1 className={styles.title}>O'Planner</h1>
       </div>
       <div className={styles.rightSide}>
-        <button onClick={languageHandler}>{props.language ? "KOR":"ENG"}</button>
-        <div className={styles.time}>{formattedTime}</div>
+        <div className={styles.buttonAndTime}>
+          <button onClick={languageHandler} className={styles.roundedBox}>
+            {props.language ? "KOR" : "ENG"}
+          </button>
+          <div className={styles.time}>{formattedTime}</div>
+        </div>
       </div>
     </div>
   );

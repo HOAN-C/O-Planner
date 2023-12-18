@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Loading from "./Loading";
 import CreditTable from "./CreditTable";
@@ -7,22 +6,22 @@ import InfoTable from "./InfoTable";
 import styles from "./Main.module.css";
 
 export default function Main() {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [data, setData] = useState();
-  const navigate = useNavigate();
 
-  useEffect(() => {
-    axios
-      .get("/lecture_infos")
-      .then((res) => {
-        setData(res);
-        console.log(res);
-        setIsLoading(false);
-      })
-      .catch((err) => {
-        alert("Login failed:", err);
-      });
-  }, []);
+  // useEffect(() => {
+  // setIsLoading(true);
+  //   axios
+  //     .get("/lecture_infos")
+  //     .then((res) => {
+  //       setData(res);
+  //       console.log(data);
+  //       setIsLoading(false);
+  //     })
+  //     .catch((err) => {
+  //       alert("Get info failed:", err);
+  //     });
+  // }, [data]);
 
   return (
     <div>

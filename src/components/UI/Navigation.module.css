@@ -5,10 +5,11 @@
   padding: 10px;
   background-color: transparent;
   border: none;
+  max-width: 100%;
 }
 
 .rightSide {
-  width: 80px;
+  width: 120px;
 }
 
 .title {
@@ -39,4 +40,22 @@
 
 .limit {
   font-weight: bold;
+}
+
+.buttonAndTime {
+  display: flex;
+  align-items: center;
+  max-width: 100%;
+}
+
+.buttonAndTime button {
+  background-color: transparent;
+  color: black;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-right: 5px;
+  margin-top: 5px;
+  font-size: 15px;
 }
