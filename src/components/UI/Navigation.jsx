@@ -1,5 +1,4 @@
 //상단 페이지 제목, 시간, 한/영 전환 버튼(추후 추가 예정) 네비게이션 바
-
 import React, { useState, useEffect } from "react";
 import styles from "./Navigation.module.css";
 
@@ -21,12 +20,17 @@ export default function Navigation(props) {
     hour12: false,
   });
 
+  const languageHandler = () => {
+    props.setLanguage(!props.language)
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.leftSide}>
         <h1 className={styles.title}>O'Planner</h1>
       </div>
       <div className={styles.rightSide}>
+        <button onClick={languageHandler}>{props.language ? "KOR":"ENG"}</button>
         <div className={styles.time}>{formattedTime}</div>
       </div>
     </div>

@@ -1,28 +1,36 @@
 .tableContainer {
-  width: 100%;
+  width: 70%;
   margin-top: 3rem;
   border-collapse: collapse;
   text-align: center;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  border-radius: 10px;
   overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .tableHeader {
-  background-color: #272727;
-  color: white;
+  background-color: #f5f5f5;
+  color: rgb(0, 0, 0);
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
 
 .tableCell {
   border: 1px solid #dddddd;
-  padding: 8px;
-  width: 7%;
+  padding: 12px;
+  width: auto;
   text-align: center;
 }
 
 .tableContainer tbody tr:last-child td {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+}
+
+.tableContainer tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.tableContainer tbody tr:hover {
+  background-color: #e0e0e0;
 }
