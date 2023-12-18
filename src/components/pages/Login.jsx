@@ -20,22 +20,22 @@ export default function Login() {
   };
 
   const clickHandler = () => {
-    // 서버로 로그인 정보 전송
-    axios
-      .post("/login.do", {
-        username: userName,
-        usernumber: userId,
-      })
-      // 로그인이 성공하면 메인 페이지로 이동
-      .then((response) => {
-        navigate("/main");
-      })
-      // 서버로부터의 응답이 실패하면 처리 (예: 오류 메시지 표시)
-      .catch((error) => {
-        //에러시 실행구문
-        console.error("Login failed:", error);
-        alert("Login failed:", error);
-      });
+    //   // 서버로 로그인 정보 전송
+    //   axios
+    //     .post("/login.do", {
+    //       username: userName,
+    //       usernumber: userId,
+    //     })
+    //     // 로그인이 성공하면 메인 페이지로 이동
+    //     .then((response) => {
+    //       navigate("/main");
+    //     })
+    //     // 서버로부터의 응답이 실패하면 처리 (예: 오류 메시지 표시)
+    //     .catch((error) => {
+    //       //에러시 실행구문
+    //       console.error("Login failed:", error);
+    //       alert("Login failed:", error);
+    //     });
   };
 
   return (

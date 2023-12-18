@@ -1,4 +1,6 @@
 import styles from "./InfoTable.module.css";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const lectureData = [
   {
@@ -53,7 +55,23 @@ const lectureData = [
   },
 ];
 
-export default function InfoTable() {
+export default function InfoTable(props) {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    // props.setIsLoading(true);
+    axios
+      .get("/lecture_infos")
+      .then((res) => {
+        setData(res);
+        console.log(data);
+        props.setIsLoading(false);
+      })
+      .catch((err) => {
+        console.log("Get lecture info failed");
+      });
+  }, [lectureData]);
+
   return (
     <table className={styles.tableContainer}>
       {/* 구분 출력 */}
