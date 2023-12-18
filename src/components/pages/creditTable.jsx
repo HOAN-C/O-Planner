@@ -6,7 +6,7 @@ const section = ["구분", "전공필수", "전공선택", "전공심화"];
 const creditData = [
   ["이수 기준", 30, 36, 70],
   ["이수 학점", 30, 27, 57],
-  ["이수 중 학점", 3, 9, 12],
+  ["잔여 학점", 3, 9, 12],
 ];
 
 export default function CreditTable() {
