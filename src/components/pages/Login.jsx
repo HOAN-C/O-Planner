@@ -63,7 +63,7 @@ export default function Login(props) {
         className={styles.input}
       />
       <button className={styles.button} onClick={clickHandler}>
-        Login
+        {props.language ? "Login" : "로그인"}
       </button>
     </div>
   );

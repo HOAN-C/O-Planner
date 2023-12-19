@@ -22,7 +22,11 @@ export default function Navigation(props) {
 
   const languageHandler = () => {
     props.setLanguage(!props.language);
-    console.log(props.language);
+    if (props.language) {
+      console.log("Language changed: KOR");
+    } else {
+      console.log("Language changed: ENG");
+    }
   };
 
   return (
