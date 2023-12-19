@@ -29,27 +29,27 @@ const dummyLectureData = [
     credit: "3",
   },
   {
-    name: "P-실무 프로젝트2",
+    name: "파이썬",
     type: "전공선택",
     credit: "3",
   },
   {
-    name: "데이터통신2",
+    name: "운영체제",
     type: "전공선택",
     credit: "3",
   },
   {
-    name: "고급웹프로그래밍2",
+    name: "심화프로그래밍",
     type: "전공선택",
     credit: "3",
   },
   {
-    name: "프로그램논리2",
+    name: "JAVA",
     type: "전공필수",
     credit: "3",
   },
   {
-    name: "C++2",
+    name: "소프트웨어공학",
     type: "전공필수",
     credit: "3",
   },
@@ -81,9 +81,11 @@ export default function InfoTable(props) {
       alert("수강 희망 학점을 먼저 입력해 주세요");
     } else if (
       !isChecked &&
-      props.desiredLecture.length >= props.desiredCredits / 3 - 1
+      props.desiredLecture.length > props.desiredCredits / 3
     ) {
-      alert(`최대 ${Math.floor(props.desiredCredits / 3) + 1}개 선택 가능합니다.`);
+      alert(
+        `최대 ${Math.floor(props.desiredCredits / 3) + 1}개 선택 가능합니다.`
+      );
     } else {
       props.setDesiredLecture((prevSelected) =>
         isChecked

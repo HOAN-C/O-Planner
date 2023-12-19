@@ -1,10 +1,16 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import logo from "../../src_assets/icon_b.png";
 import styles from "./Login.module.css";
 import { useNavigate } from "react-router-dom";
 
 export default function Login(props) {
+  useEffect(() => {
+    if (props.isLoggedIn == true) {
+      navigate("/main");
+    }
+  }, []);
+
   const [userName, setUserName] = useState("");
   const [userId, setUserId] = useState("");
   const navigate = useNavigate();
@@ -28,6 +34,7 @@ export default function Login(props) {
       })
       // 로그인이 성공하면 메인 페이지로 이동
       .then((response) => {
+        props.setIsLoggedIn(true);
         navigate("/main");
       })
       // 서버로부터의 응답이 실패하면 처리 (예: 오류 메시지 표시)
