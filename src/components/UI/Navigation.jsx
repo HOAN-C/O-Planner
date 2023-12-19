@@ -22,6 +22,7 @@ export default function Navigation(props) {
 
   const languageHandler = () => {
     props.setLanguage(!props.language);
+    console.log(props.language);
   };
 
   return (

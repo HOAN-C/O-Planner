@@ -11,13 +11,13 @@
   flex-direction: column;
 }
 
-img {
+.logo {
   width: 10rem;
   border-radius: 70%;
   margin-bottom: 20px;
 }
 
-input {
+.input {
   width: 250px;
   width: 100%;
   padding: 10px 0 10px 0;
@@ -27,7 +27,7 @@ input {
   text-align: center;
 }
 
-button {
+.button {
   width: 270px;
   width: 100%;
   padding: 10px;
@@ -38,6 +38,6 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+.button:hover {
   background-color: #0056b3;
 }

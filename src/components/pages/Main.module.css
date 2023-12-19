@@ -6,9 +6,52 @@
 }
 
 .button {
-  margin-top: 3rem;
-  margin-right: 10px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  color: whitesmoke;
+  font-weight: bold;
+  margin-top: 1rem;
   width: max-content;
   text-align: center;
   padding: 10px;
+}
+
+.title {
+  width: 70%;
+}
+
+.inputContainer {
+  width: 70%;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: large;
+}
+
+.input {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #dddddd;
+  background-color: #f3f3f3;
+  border-radius: 5px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  width: 48%;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.inputbox {
+  text-align: center;
+  font-size: 1rem;
+  background-color: transparent;
+  border: none;
+  border-bottom: black 1px solid;
+}
+
+.daybox {
+  display: flex;
+  margin: 0 0.5rem 1rem 0.5rem;
 }

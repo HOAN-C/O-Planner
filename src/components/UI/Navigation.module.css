@@ -2,20 +2,18 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
   background-color: transparent;
+  padding-top: 12px;
   border: none;
   width: 100%;
 }
 
 .rightSide {
-  width: 300px;
-  border: solid 1px black;
   display: flex;
   flex-flow: row;
   align-items: center;
   justify-content: center;
-  width: 120px;
+  width: 180px;
 }
 
 .title {
@@ -28,11 +26,12 @@
   color: black;
   border: none;
   cursor: pointer;
-  margin-right: 5px;
+  width: 50%;
+  font-size: 15px;
 }
 
 .time {
-  width: 580px;
-  margin-right: 1rem;
+  font-size: 17px;
   text-align: left;
+  width: 50%;
 }
