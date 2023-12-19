@@ -17,8 +17,12 @@
 .tableCell {
   border: 1px solid #dddddd;
   padding: 12px;
-  width: auto;
+  width: 29%;
   text-align: center;
+}
+
+.checkBoxTableCell {
+  width: 13%;
 }
 
 .tableContainer tbody tr:last-child td {

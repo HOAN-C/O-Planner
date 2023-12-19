@@ -101,7 +101,7 @@ export default function InfoTable(props) {
       {/* 구분 출력 */}
       <thead>
         <tr className={styles.tableHeader}>
-          <th className={styles.tableCell}>
+          <th className={styles.checkBoxTableCell}>
             {props.language ? "Selection" : "선택"}
           </th>
           <th className={styles.tableCell}>
@@ -119,7 +119,7 @@ export default function InfoTable(props) {
       <tbody>
         {dummyLectureData.map((item, index) => (
           <tr key={index}>
-            <td className={styles.tableCell}>
+            <td className={styles.checkBoxTableCell}>
               <input
                 type="checkbox"
                 checked={props.desiredLecture.includes(item.name)}

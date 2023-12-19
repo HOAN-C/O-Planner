@@ -4,6 +4,7 @@ import CreditTable from "./CreditTable";
 import InfoTable from "./InfoTable";
 import styles from "./Main.module.css";
 import axios from "axios";
+import Timetable from "../UI/TimeTable";
 
 export default function Main(props) {
   const [isLoading, setIsLoading] = useState(false);
@@ -84,7 +85,7 @@ export default function Main(props) {
               />
             </div>
             <div className={styles.input}>
-              <h3>{props.language ? "Hope free time" : "희망 공강 요일"}</h3>
+              <h3>{props.language ? "Desired Holiday" : "희망 공강 요일"}</h3>
               <div className={styles.daybox}>
                 <label className={styles.daybox}>
                   <input
@@ -138,10 +139,11 @@ export default function Main(props) {
             language={props.language}
           />
           <button onClick={handleSubmit} className={styles.button}>
-          {props.language ? "Generate" : "시간표 생성"}
+            {props.language ? "Generate" : "시간표 생성"}
           </button>
         </div>
       )}
+      <Timetable />
     </div>
   );
 }
