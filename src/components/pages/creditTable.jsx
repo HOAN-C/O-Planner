@@ -21,7 +21,7 @@ export default function CreditTable(props) {
     props.language ? engSeparation : korSeparation
   );
 
-  const qualification = [30, 36, 70]; //이수 구분 고정
+  const qualification = [33, 36, 70]; //이수 구분 고정
 
   useEffect(() => {
     // props.setIsLoading(true);
@@ -29,7 +29,7 @@ export default function CreditTable(props) {
       .get("//user_info")
       .then((res) => {
         setData(res);
-        console.log(data);
+        console.log("CreditTable : " + data);
         props.setIsLoading(false);
       })
       .catch((err) => {

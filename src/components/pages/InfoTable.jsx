@@ -64,7 +64,7 @@ export default function InfoTable(props) {
       .get("/lecture_infos")
       .then((res) => {
         setData(res);
-        console.log(data);
+        console.log("InfoTable : " + data);
         props.setIsLoading(false);
       })
       .catch((err) => {

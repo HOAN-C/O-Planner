@@ -4,9 +4,10 @@ import CreditTable from "./CreditTable";
 import InfoTable from "./InfoTable";
 import styles from "./Main.module.css";
 import axios from "axios";
-import Timetable from "../UI/TimeTable";
+import TimeTableList from "../UI/TimeTableList";
 
 export default function Main(props) {
+  const [showTimeTable, setShowTimeTable] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [desiredCredits, setDesiredCredits] = useState(0); //숫자
   const [desiredDaysOff, setDesiredDaysOff] = useState([]); //"MON", "TUE", "WED", "THU", "FRI"
@@ -40,15 +41,24 @@ export default function Main(props) {
       desiredDaysOff: desiredDaysOff,
       desiredLecture: desiredLecture,
     });
-    // axios
-    //   .post("/recommend", {
-    //     desiredCredits: desiredCredits, //number로 형 변환 후 보낼 것!
-    //     desiredDaysOff: desiredDaysOff,
-    //     desiredLecture: desiredLecture,
-    //   })
-    //   .then((response) => {
-    //     console.log("실행할 코드");
-    //   });
+    setShowTimeTable(true);
+
+    axios
+      .post("/recommend", {
+        desiredCredits: desiredCredits, //number로 형 변환 후 보낼 것!
+        desiredDaysOff: desiredDaysOff,
+        desiredLecture: desiredLecture,
+      })
+      .then((response) => {
+        console.log("실행할 코드");
+      })
+      .catch((error) => {
+        console.error("에러 발생:", error);
+      });
+  };
+
+  const closeModal = () => {
+    setShowTimeTable(false);
   };
 
   return (
@@ -73,6 +83,7 @@ export default function Main(props) {
             </h1>
           </div>
           <div className={styles.inputContainer}>
+            {/* 수강 희망 학점 */}
             <div className={styles.input}>
               <h3>{props.language ? "Hope Credit" : "수강 희망 학점"}</h3>
               <input
@@ -84,6 +95,7 @@ export default function Main(props) {
                 max={25}
               />
             </div>
+            {/* 희망 공강 요일 */}
             <div className={styles.input}>
               <h3>{props.language ? "Desired Holiday" : "희망 공강 요일"}</h3>
               <div className={styles.daybox}>
@@ -143,7 +155,16 @@ export default function Main(props) {
           </button>
         </div>
       )}
-      <Timetable />
+      {showTimeTable && (
+        <div className={styles.modalOverlay} onClick={closeModal}>
+          <div className={styles.modal}>
+            <TimeTableList />
+            <span className={styles.closeButton} onClick={closeModal}>
+              &times;
+            </span>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
