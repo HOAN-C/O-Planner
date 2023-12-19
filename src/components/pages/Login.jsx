@@ -6,10 +6,10 @@ import { useNavigate } from "react-router-dom";
 
 export default function Login(props) {
   useEffect(() => {
-    if (props.isLoggedIn == true) {
+    if (props.isLoggedIn === true) {
       navigate("/main");
     }
-  }, []);
+  });
 
   const [userName, setUserName] = useState("");
   const [userId, setUserId] = useState("");

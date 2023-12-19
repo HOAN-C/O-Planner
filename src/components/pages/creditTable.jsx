@@ -42,13 +42,14 @@ export default function CreditTable(props) {
       .catch((err) => {
         console.log("Get user info failed");
       });
-  }, []);
+  });
 
   useEffect(() => {
     setRequired(data.creditRequired);
     setOptional(data.creditOptional);
     console.log("CreditTable: ", data);
   }, [data]);
+
   var advanced = required + optional; //추후 데이터 받아오면 동적 할당
   const remain = [
     qualification[0] - required,

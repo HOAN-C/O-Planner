@@ -3,60 +3,28 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 const dummyLectureData = [
-  {
-    name: "P-실무 프로젝트",
-    type: "전공선택",
-    credit: "3",
-  },
-  {
-    name: "데이터통신",
-    type: "전공선택",
-    credit: "3",
-  },
-  {
-    name: "고급웹프로그래밍",
-    type: "전공선택",
-    credit: "3",
-  },
-  {
-    name: "프로그램논리",
-    type: "전공필수",
-    credit: "3",
-  },
-  {
-    name: "C++",
-    type: "전공필수",
-    credit: "3",
-  },
-  {
-    name: "파이썬",
-    type: "전공선택",
-    credit: "3",
-  },
-  {
-    name: "운영체제",
-    type: "전공선택",
-    credit: "3",
-  },
-  {
-    name: "심화프로그래밍",
-    type: "전공선택",
-    credit: "3",
-  },
-  {
-    name: "JAVA",
-    type: "전공필수",
-    credit: "3",
-  },
-  {
-    name: "소프트웨어공학",
-    type: "전공필수",
-    credit: "3",
-  },
+  { name: "소프트웨어공학", type: "Required", credit: "3" },
+  { name: "응용SW서비스", type: "Required", credit: "3" },
+  { name: "정보보호개론", type: "Required", credit: "3" },
+  { name: "IT특강", type: "Optional", credit: "3" },
+  { name: "SW테스트", type: "Optional", credit: "3" },
+  { name: "데이터마이닝", type: "Optional", credit: "3" },
+  { name: "데이터분석처리", type: "Optional", credit: "3" },
+  { name: "디지털콘텐츠기획", type: "Optional", credit: "3" },
+  { name: "모바일프로그래밍", type: "Optional", credit: "3" },
+  { name: "빅데이터", type: "Optional", credit: "3" },
+  { name: "스마트기기시스템", type: "Optional", credit: "3" },
+  { name: "알고리즘", type: "Optional", credit: "3" },
+  { name: "웹프로그래밍", type: "Optional", credit: "3" },
+  { name: "응용SW연동", type: "Optional", credit: "3" },
+  { name: "인공지능", type: "Optional", credit: "3" },
+  { name: "정보보호", type: "Optional", credit: "3" },
+  { name: "제품소프트웨어패키징", type: "Optional", credit: "3" },
+  { name: "현장실습연계프로젝트", type: "Optional", credit: "3" },
 ];
 
 export default function InfoTable(props) {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState(dummyLectureData);
 
   useEffect(() => {
     // props.setIsLoading(true);
@@ -70,7 +38,7 @@ export default function InfoTable(props) {
       .catch((err) => {
         console.log("Get lecture info failed");
       });
-  }, [dummyLectureData]);
+  });
 
   const handleCheckboxChange = (name) => {
     // 체크박스 토글 로직
@@ -117,7 +85,7 @@ export default function InfoTable(props) {
       </thead>
       {/* 정보 출력 */}
       <tbody>
-        {dummyLectureData.map((item, index) => (
+        {data.map((item, index) => (
           <tr key={index}>
             <td className={styles.checkBoxTableCell}>
               <input
@@ -127,7 +95,7 @@ export default function InfoTable(props) {
               />
             </td>
             <td className={styles.tableCell}>{item.name}</td>
-            <td className={styles.tableCell}>{item.type}</td>
+            <td className={styles.tableCell}>{(item.type === "Required") ? "전필" : "전선"}</td>
             <td className={styles.tableCell}>{item.credit}</td>
           </tr>
         ))}

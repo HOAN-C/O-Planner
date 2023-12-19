@@ -71,13 +71,16 @@
 }
 
 .modal {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
   position: relative;
   background: white;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   max-width: 80%;
-  height: 90%;
+  height: 80%;
   overflow: auto;
 }
 
@@ -85,7 +88,7 @@
   position: absolute;
   top: -1px;
   right: 8px;
-  font-size: 20px;
+  font-size: 30px;
   cursor: pointer;
   color: #333;
 }

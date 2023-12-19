@@ -9,7 +9,7 @@
   position: absolute;
   top: 300px;
   left: 15px;
-  font-size: 5rem;
+  font-size: 3rem;
   cursor: pointer;
   color: #5b5b5b;
 }
@@ -17,7 +17,7 @@
   position: absolute;
   top: 300px;
   right: 15px;
-  font-size: 5rem;
+  font-size: 3rem;
   cursor: pointer;
   color: #5b5b5b;
 }
