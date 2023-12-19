@@ -101,10 +101,18 @@ export default function InfoTable(props) {
       {/* 구분 출력 */}
       <thead>
         <tr className={styles.tableHeader}>
-          <th className={styles.tableCell}>선택</th>
-          <th className={styles.tableCell}>교과목명</th>
-          <th className={styles.tableCell}>이수구분</th>
-          <th className={styles.tableCell}>학점</th>
+          <th className={styles.tableCell}>
+            {props.language ? "Selection" : "선택"}
+          </th>
+          <th className={styles.tableCell}>
+            {props.language ? "Lecture" : "강의명"}
+          </th>
+          <th className={styles.tableCell}>
+            {props.language ? "Classification" : "이수구분"}
+          </th>
+          <th className={styles.tableCell}>
+            {props.language ? "Credit" : "학점"}
+          </th>
         </tr>
       </thead>
       {/* 정보 출력 */}

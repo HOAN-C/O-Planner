@@ -5,7 +5,7 @@ import InfoTable from "./InfoTable";
 import styles from "./Main.module.css";
 import axios from "axios";
 
-export default function Main() {
+export default function Main(props) {
   const [isLoading, setIsLoading] = useState(false);
   const [desiredCredits, setDesiredCredits] = useState(0); //숫자
   const [desiredDaysOff, setDesiredDaysOff] = useState([]); //"MON", "TUE", "WED", "THU", "FRI"
@@ -57,15 +57,23 @@ export default function Main() {
       ) : (
         <div className={styles.container}>
           <div className={styles.title}>
-            <h1 className={styles.titleText}>취득 학점</h1>
+            <h1 className={styles.titleText}>
+              {props.language ? "Earned Credit" : "취득 학점"}
+            </h1>
           </div>
-          <CreditTable isLoading={isLoading} setIsLoading={setIsLoading} />
+          <CreditTable
+            isLoading={isLoading}
+            setIsLoading={setIsLoading}
+            language={props.language}
+          />
           <div className={styles.title}>
-            <h1 className={styles.titleText}>시간표 생성</h1>
+            <h1 className={styles.titleText}>
+              {props.language ? "Generate Timetable" : "시간표 생성"}
+            </h1>
           </div>
           <div className={styles.inputContainer}>
             <div className={styles.input}>
-              <h3>수강 희망 학점</h3>
+              <h3>{props.language ? "Hope Credit" : "수강 희망 학점"}</h3>
               <input
                 className={styles.inputbox}
                 type="number"
@@ -76,47 +84,47 @@ export default function Main() {
               />
             </div>
             <div className={styles.input}>
-              <h3>공강 희망 요일</h3>
+              <h3>{props.language ? "Hope free time" : "희망 공강 요일"}</h3>
               <div className={styles.daybox}>
                 <label className={styles.daybox}>
                   <input
                     type="checkbox"
-                    checked={desiredDaysOff.includes("월")}
-                    onChange={() => handleDayToggle("월")}
+                    checked={desiredDaysOff.includes("MON")}
+                    onChange={() => handleDayToggle("MON")}
                   />
-                  월
+                  {props.language ? "MON" : "월"}
                 </label>
                 <label className={styles.daybox}>
                   <input
                     type="checkbox"
-                    checked={desiredDaysOff.includes("화")}
-                    onChange={() => handleDayToggle("화")}
+                    checked={desiredDaysOff.includes("TUE")}
+                    onChange={() => handleDayToggle("TUE")}
                   />
-                  화
+                  {props.language ? "TUE" : "화"}
                 </label>
                 <label className={styles.daybox}>
                   <input
                     type="checkbox"
-                    checked={desiredDaysOff.includes("수")}
-                    onChange={() => handleDayToggle("수")}
+                    checked={desiredDaysOff.includes("WED")}
+                    onChange={() => handleDayToggle("WED")}
                   />
-                  수
+                  {props.language ? "WED" : "수"}
                 </label>
                 <label className={styles.daybox}>
                   <input
                     type="checkbox"
-                    checked={desiredDaysOff.includes("목")}
-                    onChange={() => handleDayToggle("목")}
+                    checked={desiredDaysOff.includes("THU")}
+                    onChange={() => handleDayToggle("THU")}
                   />
-                  목
+                  {props.language ? "THU" : "목"}
                 </label>
                 <label className={styles.daybox}>
                   <input
                     type="checkbox"
-                    checked={desiredDaysOff.includes("금")}
-                    onChange={() => handleDayToggle("금")}
+                    checked={desiredDaysOff.includes("FIR")}
+                    onChange={() => handleDayToggle("FIR")}
                   />
-                  금
+                  {props.language ? "FRI" : "금"}
                 </label>
               </div>
             </div>
@@ -127,9 +135,10 @@ export default function Main() {
             desiredCredits={desiredCredits}
             desiredLecture={desiredLecture}
             setDesiredLecture={setDesiredLecture}
+            language={props.language}
           />
           <button onClick={handleSubmit} className={styles.button}>
-            시간표 생성
+          {props.language ? "Generate" : "시간표 생성"}
           </button>
         </div>
       )}
