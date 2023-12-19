@@ -13,7 +13,10 @@ const engSeparation = [
 ];
 
 export default function CreditTable(props) {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState({stNum: 202031233, stName: "정재원", creditRequired: 30, creditOptional: 30});
+  const [required, setRequired] = useState(30);
+  const [optional, setOptional] = useState(30);
+
   const [section, setSection] = useState(
     props.language ? engSection : korSection
   );
@@ -21,15 +24,19 @@ export default function CreditTable(props) {
     props.language ? engSeparation : korSeparation
   );
 
+  useEffect(() => {
+    setSection(props.language ? engSection : korSection);
+    setSparation(props.language ? engSeparation : korSeparation);
+  }, [props.language]);
+
   const qualification = [33, 36, 70]; //이수 구분 고정
 
   useEffect(() => {
     // props.setIsLoading(true);
     axios
-      .get("//user_info")
+      .get("/user_info")
       .then((res) => {
         setData(res);
-        console.log("CreditTable : " + data);
         props.setIsLoading(false);
       })
       .catch((err) => {
@@ -38,12 +45,10 @@ export default function CreditTable(props) {
   }, []);
 
   useEffect(() => {
-    setSection(props.language ? engSection : korSection);
-    setSparation(props.language ? engSeparation : korSeparation);
-  }, [props.language]);
-
-  var required = 30; //추후 데이터 받아오면 동적 할당
-  var optional = 27; //추후 데이터 받아오면 동적 할당
+    setRequired(data.creditRequired);
+    setOptional(data.creditOptional);
+    console.log("CreditTable: ", data);
+  }, [data]);
   var advanced = required + optional; //추후 데이터 받아오면 동적 할당
   const remain = [
     qualification[0] - required,

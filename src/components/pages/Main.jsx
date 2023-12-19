@@ -92,7 +92,7 @@ export default function Main(props) {
                 value={desiredCredits}
                 onChange={handleCreditChange}
                 min={3}
-                max={25}
+                max={21}
               />
             </div>
             {/* 희망 공강 요일 */}
@@ -134,8 +134,8 @@ export default function Main(props) {
                 <label className={styles.daybox}>
                   <input
                     type="checkbox"
-                    checked={desiredDaysOff.includes("FIR")}
-                    onChange={() => handleDayToggle("FIR")}
+                    checked={desiredDaysOff.includes("FRI")}
+                    onChange={() => handleDayToggle("FRI")}
                   />
                   {props.language ? "FRI" : "금"}
                 </label>
